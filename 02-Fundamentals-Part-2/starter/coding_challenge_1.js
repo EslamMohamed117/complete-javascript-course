@@ -1,3 +1,4 @@
+`use strict`;
 //-------------------- Coding Challenge #1 --------------------
 /*
 Back to the two gymnastics teams, the Dolphins and the Koalas! There is a new 
@@ -24,3 +25,26 @@ Hints:
 § To check if number A is at least double number B, check for A >= 2 * B. 
 Apply this to the team's average scores �
 */
+const calcAverage = (firstScore, secondScore, thirdScore) =>
+  (firstScore + secondScore + thirdScore) / 3;
+
+const dolphinsAvgScore = calcAverage(
+  Number(prompt("Dolphins: Enter first score")),
+  Number(prompt("Dolphins: Enter second score")),
+  Number(prompt("Dolphins: Enter third score"))
+);
+const koalasAvgScore = calcAverage(
+  Number(prompt("koalas: Enter first score")),
+  Number(prompt("koalas: Enter second score")),
+  Number(prompt("koalas: Enter third score"))
+);
+
+const checkWinner = function (firstTeam, secondTeam) {
+  if (firstTeam >= 2 * secondTeam)
+    console.log(`Dolphins win (${firstTeam} vs ${secondTeam})`);
+  else if (secondTeam >= 2 * firstTeam)
+    console.log(`Koalas win (${secondTeam} vs ${firstTeam})`);
+  else console.log(`No team wins...`);
+};
+
+checkWinner(dolphinsAvgScore, koalasAvgScore);
